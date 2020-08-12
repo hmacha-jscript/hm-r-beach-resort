@@ -1,9 +1,8 @@
 import React from 'react';
+import Hero from '../components/Hero';
 
-const Error = () => {
+export default function Error() {
     return (
-        <div>This is Error</div>
+        <Hero />
     )
 }
-
-export default Error;
