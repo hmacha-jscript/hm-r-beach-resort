@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Room extends Component {
     render() {
-        const { name, slug, images, price } = this.props.room;
+        const { slug, images, price } = this.props.room;
         return (
             <article className="room">
                 <div className="img-container">
