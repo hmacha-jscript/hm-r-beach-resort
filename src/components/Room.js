@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Room extends Component {
     render() {
-        const { slug, images, price } = this.props.room;
+        const { name, slug, images, price } = this.props.room;
         return (
             <article className="room">
                 <div className="img-container">
@@ -16,9 +17,18 @@ class Room extends Component {
                         Features
                     </Link>
                 </div>
+                <p className="room-info">{name}</p>
             </article>
         )
     }
 }
 
+Room.propTypes = {
+    room: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+        images: PropTypes.arrayOf(PropTypes.string).isRequired,
+        price: PropTypes.number.isRequired
+    })
+}
 export default Room;
