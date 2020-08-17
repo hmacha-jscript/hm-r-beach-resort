@@ -13,7 +13,7 @@ export default function RoomFilter({ rooms }) {
     const {
         handleChange,
         type,
-        // capacity,
+        capacity,
         // price,
         // minPrice,
         // maxPrice,
@@ -29,6 +29,11 @@ export default function RoomFilter({ rooms }) {
 
     //map to jsx
     types = types.map(type => <option value={type} > {type}</ option>)
+
+    let people = getUnique(rooms, 'capacity');
+    people = people.map((item, index) => {
+        return <option key={index} value={item}>{item}</option>
+    })
     return (
         <section className="filter-container">
             <Title title="search rooms" />
@@ -42,6 +47,17 @@ export default function RoomFilter({ rooms }) {
                         onChange={handleChange}
                     >
                         {types}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="capacity">Guests</label>
+                    <select className="form-control"
+                        name="capacity"
+                        id="capacity"
+                        value={capacity}
+                        onChange={handleChange}
+                    >
+                        {people}
                     </select>
                 </div>
             </form>
