@@ -13,14 +13,14 @@ export default function RoomFilter({ rooms }) {
     const {
         handleChange,
         type,
-        capacity,
-        price,
-        minPrice,
-        maxPrice,
-        minSize,
-        maxSize,
-        breakfast,
-        pets
+        // capacity,
+        // price,
+        // minPrice,
+        // maxPrice,
+        // minSize,
+        // maxSize,
+        // breakfast,
+        // pets
     } = context;
     //get unique types
     let types = getUnique(rooms, 'type');
